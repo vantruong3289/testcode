@@ -1,0 +1,13 @@
+{
+    "name": "truong.phamvan1/auth",
+    "description": "Build page login , logout",
+    "type": "function",
+    "authors": [
+        {
+            "name": "Truong PV",
+            "email": "truong.phamvan1@vti.com.vn"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

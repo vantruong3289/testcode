@@ -1,0 +1,11 @@
+{
+    "name": "truong.phamvan1/question",
+    "description": "Question - answer",
+    "authors": [
+        {
+            "name": "Truong PV",
+            "email": "truong.phamvan1@vti.com.vn"
+        }
+    ],
+    "require": {}
+}
