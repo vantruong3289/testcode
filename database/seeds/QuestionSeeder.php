@@ -1,5 +1,4 @@
 <?php
-namespace Truongpv\Question;
 
 use App\Question;
 use Illuminate\Database\Seeder;
@@ -13,6 +12,6 @@ class QuestionSeeder extends Seeder
      */
     public function run()
     {
-        factory(Question::class, 350)->create();
+        factory(Question::class, 150)->create();
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Truongpv\Dashboard;
+namespace Truongpv\Dashboard\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

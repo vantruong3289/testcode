@@ -1,7 +1,6 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-namespace Truongpv\Question;
 
 use App\Question;
 use App\User;

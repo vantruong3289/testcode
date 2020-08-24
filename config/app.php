@@ -174,7 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Truongpv\Auth\AppServiceProvider::class,
+        
         Truongpv\Dashboard\AppServiceProvider::class,
         Truongpv\Question\AppServiceProvider::class,
 

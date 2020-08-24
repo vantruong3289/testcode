@@ -1,9 +1,9 @@
 <?php
 
-namespace Truongpv\Question;
+namespace Truongpv\Question\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Question;
+use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -98,6 +98,12 @@ class QuestionController extends Controller
     }
 
 
+    /**
+     * Handle upload image
+     * @param \illuminate\Http\Request $request
+     * @param \App\Question  $question
+     * @return string $path
+     */
     protected function upload(Request $request, Question $question = null)
     {
         $path = null;
