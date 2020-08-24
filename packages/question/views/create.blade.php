@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="card mr-5 rounded-0">
+    <div class="card rounded-0">
         <div class="card-header">{{ __('Create') }}</div>
         <div class="card-body">
             <form method="POST" action="{{ route('questions.store') }}" enctype="multipart/form-data">
