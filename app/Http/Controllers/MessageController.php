@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\RoomChat;
+use App\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class RoomChatController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,7 @@ class RoomChatController extends Controller
      */
     public function index()
     {
-        $roomChats = RoomChat::get();
-        return view('room_chats.index', compact('roomChats'));
+        //
     }
 
     /**
@@ -36,27 +36,30 @@ class RoomChatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $input['user_id'] = Auth::id();
+        $message = Message::create($input);
+        return response($message);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\RoomChat  $roomChat
+     * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function show(RoomChat $roomChat)
+    public function show(Message $message)
     {
-        return view('room_chats.show', compact('roomChat'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\RoomChat  $roomChat
+     * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function edit(RoomChat $roomChat)
+    public function edit(Message $message)
     {
         //
     }
@@ -65,10 +68,10 @@ class RoomChatController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\RoomChat  $roomChat
+     * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RoomChat $roomChat)
+    public function update(Request $request, Message $message)
     {
         //
     }
@@ -76,10 +79,10 @@ class RoomChatController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\RoomChat  $roomChat
+     * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RoomChat $roomChat)
+    public function destroy(Message $message)
     {
         //
     }

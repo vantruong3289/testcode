@@ -13,5 +13,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 
-Route::resource('roomchats', 'RoomChatController');
+Route::resource('room-chats', 'RoomChatController');
 Route::resource('questions', 'QuestionController');
+Route::resource('messages', 'MessageController');

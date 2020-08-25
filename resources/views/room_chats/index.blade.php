@@ -7,13 +7,15 @@
             <div class="card">
                 <div class="card-header">{{ __('Room chat') }}</div>
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+
                 </div>
-                
+                <ul class="list-group list-group-flush">
+                    @foreach($roomChats as $key => $roomChat)                        
+                    <li class="list-group-item">
+                        <a href="{{ route('room-chats.show', $roomChat->id) }}">{{ $roomChat->name }}</a>
+                    </li>
+                    @endforeach
+                </ul>              
             </div>  
         </div>
     </div>

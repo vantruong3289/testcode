@@ -1,8 +1,9 @@
 <?php
 
+use App\RoomChat;
 use Illuminate\Database\Seeder;
 
-class RoomChatTableSeeder extends Seeder
+class RoomChatSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class RoomChatTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(RoomChat::class, 50)->create();
     }
 }
