@@ -19,14 +19,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <x-navbar-top />
-    <div class="container-fuild">
-        <div class="row no-gutters">
-            <div class="col-2">
-                <x-menu />
+    <div id="app">
+        <x-navbar-top />
+        <div class="container-fuild">
+            <div class="row no-gutters">
+                <div class="col-2">
+                    <x-menu />
+                </div>
+                <div class="col-3">@yield('action')</div>
+                <div class="col-7">@yield('content')</div>
             </div>
-            <div class="col-3">@yield('action')</div>
-            <div class="col-7">@yield('content')</div>
         </div>
     </div>
 </body>
