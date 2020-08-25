@@ -2043,8 +2043,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")["default"];
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: [],
   data: function data() {
@@ -2065,6 +2063,13 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")["d
         _this.messages.push(response.data);
       });
     }
+  },
+  created: function created() {
+    var _this2 = this;
+
+    Echo.channel('new-message').listen('NewMessage', function (e) {
+      _this2.messages.push(e.message);
+    });
   }
 });
 
@@ -49567,7 +49572,7 @@ var render = function() {
             _c(
               "form",
               {
-                staticClass: "form-inline",
+                staticClass: "d-flex justify-content-between",
                 attrs: { action: "/messages", method: "post" },
                 on: {
                   submit: function($event) {

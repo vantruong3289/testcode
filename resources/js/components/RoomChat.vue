@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="card-footer">
-                        <form class="form-inline" action="/messages" method="post" @submit.prevent="send($event)">                            
+                        <form class="d-flex justify-content-between" action="/messages" method="post" @submit.prevent="send($event)">                            
                             <input type="text" class="form-control mr-1" v-model="message">
                             <button class="btn btn-primary">Send</button>
                         </form>
@@ -22,7 +22,6 @@
 </template>
 
 <script>
-    const axios = require('axios').default;
     export default {
         props: [],
         data: function(){
@@ -40,6 +39,12 @@
                     this.messages.push(response.data);
                 })
             }
+        },
+        created() {
+            Echo.channel('new-message')
+            .listen('NewMessage', (e) => {
+                this.messages.push(e.message);
+            });
         }
     }
 </script>

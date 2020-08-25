@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewMessage;
 use App\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,7 @@ class MessageController extends Controller
         $input = $request->all();
         $input['user_id'] = Auth::id();
         $message = Message::create($input);
+        broadcast(new NewMessage($message))->toOthers();
         return response($message);
     }
 
