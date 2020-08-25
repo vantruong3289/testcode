@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\Question;
+use App\Form;
 use Illuminate\Database\Seeder;
 
-class QuestionSeeder extends Seeder
+class FormSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class QuestionSeeder extends Seeder
      */
     public function run()
     {
-        factory(Question::class, 50)->create();
+        factory(Form::class, 50)->create();
     }
 }

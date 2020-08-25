@@ -13,7 +13,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class NewMessage implements ShouldBroadcastNow
+class NewMessagePublic implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -23,7 +23,7 @@ class NewMessage implements ShouldBroadcastNow
      *
      * @return void
      */
-    public function __construct(Message $message)
+    public function __construct(array $message)
     {
         $this->message = $message;
     }
@@ -35,6 +35,6 @@ class NewMessage implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new Channel('new-message');
+        return new Channel('new-message-public');
     }
 }

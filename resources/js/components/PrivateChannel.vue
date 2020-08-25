@@ -3,12 +3,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">RoomChat</div>
-
+                    <div class="card-header">Private Channel</div>
                     <div class="card-body">
                         <p v-for="item in messages" :key="item.id">{{ item.content }}</p>
                     </div>
-
                     <div class="card-footer">
                         <form class="d-flex justify-content-between" action="/messages" method="post" @submit.prevent="send($event)">                            
                             <input type="text" class="form-control mr-1" v-model="message">
@@ -34,15 +32,15 @@
             send(event) {
                 let data = {'content': this.message};
                 this.message = '';
-                axios.post('/messages', data)
+                axios.post('/broadcasting/new-message-private', data)
                 .then((response) => {
                     this.messages.push(response.data);
                 })
             }
         },
         created() {
-            Echo.channel('new-message')
-            .listen('NewMessage', (e) => {
+            Echo.private('new-message-private')
+            .listen('NewMessagePrivate', (e) => {
                 this.messages.push(e.message);
             });
         }

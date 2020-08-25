@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\RoomChat;
+use App\Form;
 use Illuminate\Http\Request;
 
-class RoomChatController extends Controller
+class FormController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class RoomChatController extends Controller
      */
     public function index()
     {
-        $roomChats = RoomChat::get();
-        return view('room_chats.index', compact('roomChats'));
+        $forms = Form::paginate(10);
+        return view('forms.index', compact('forms'));
     }
 
     /**
@@ -25,7 +25,7 @@ class RoomChatController extends Controller
      */
     public function create()
     {
-        //
+        return view('forms.create');
     }
 
     /**
@@ -42,45 +42,45 @@ class RoomChatController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\RoomChat  $roomChat
+     * @param  \App\Form  $form
      * @return \Illuminate\Http\Response
      */
-    public function show(RoomChat $roomChat)
+    public function show(Form $form)
     {
-        return view('room_chats.show', compact('roomChat'));
+        return view('forms.show', compact('form'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\RoomChat  $roomChat
+     * @param  \App\Question  $form
      * @return \Illuminate\Http\Response
      */
-    public function edit(RoomChat $roomChat)
+    public function edit(Form $form)
     {
-        //
+        return view('forms.edit', compact('form'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\RoomChat  $roomChat
+     * @param  \App\Form  $form
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RoomChat $roomChat)
+    public function update(Request $request, Form $form)
     {
-        //
+        $form->update($request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\RoomChat  $roomChat
+     * @param  \App\Form  $form
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RoomChat $roomChat)
+    public function destroy(Form $form)
     {
-        //
+        $form->delete();
     }
 }
