@@ -18,14 +18,16 @@ class NewMessagePrivate implements ShouldBroadcastNow
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $message;
+    public $recievedId;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(array $message)
+    public function __construct(array $message, $recievedId)
     {
         $this->message = $message;
+        $this->recievedId = $recievedId;
     }
 
     /**
@@ -35,6 +37,6 @@ class NewMessagePrivate implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('new-message-private');
+        return new PrivateChannel('new-message-private.'.$this->recievedId);
     }
 }

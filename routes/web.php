@@ -17,7 +17,7 @@ Route::resource('forms', 'FormController');
 
 // Broadcasting
 Route::get('public-channel', 'BroadcastingController@publicChannel');
-Route::get('private-channel', 'BroadcastingController@privateChannel');
+Route::get('private-channel/{recievedId}', 'BroadcastingController@privateChannel');
 Route::get('present-channel', 'broadcastingController@presentChannel');
 Route::post('broadcasting/new-message-public', 'BroadcastingController@newMessagePublic');
 Route::post('broadcasting/new-message-private', 'BroadcastingController@newMessagePrivate');

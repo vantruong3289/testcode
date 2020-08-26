@@ -24,9 +24,9 @@ class BroadcastingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function privateChannel()
+    public function privateChannel($recievedId)
     {
-        return view('broadcastings.private');
+        return view('broadcastings.private', compact('recievedId'));
     }
 
     /**
@@ -65,7 +65,7 @@ class BroadcastingController extends Controller
     {
         $message = $request->all();
         $message['user_id'] = Auth::id() ?? null;
-        broadcast(new NewMessagePrivate($message));
+        broadcast(new NewMessagePrivate($message, $recievedId));
         return response($message);
     }
 }

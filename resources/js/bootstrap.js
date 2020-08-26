@@ -46,9 +46,3 @@ window.Echo = new Echo({
     broadcaster: 'socket.io',
     host: window.location.hostname + ':6001'
 });
-
-window.Echo.channel('channel-name')
-    .listen('NewMessage', (e) => {
-        console.log(e);
-        alert('abc');
-    });

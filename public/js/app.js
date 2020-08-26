@@ -2032,7 +2032,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this2 = this;
 
-    Echo["private"]('new-message-private').listen('NewMessagePrivate', function (e) {
+    Echo["private"]("new-message-private.".concat(recievedId)).listen('NewMessagePrivate', function (e) {
       _this2.messages.push(e.message);
     });
   }
@@ -49554,7 +49554,7 @@ var render = function() {
             _c(
               "form",
               {
-                staticClass: "d-flex justify-content-between",
+                staticClass: "justify-content-between",
                 attrs: { action: "/messages", method: "post" },
                 on: {
                   submit: function($event) {
@@ -62056,10 +62056,6 @@ window.io = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.i
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'socket.io',
   host: window.location.hostname + ':6001'
-});
-window.Echo.channel('channel-name').listen('NewMessage', function (e) {
-  console.log(e);
-  alert('abc');
 });
 
 /***/ }),
