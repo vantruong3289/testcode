@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-<private-channel />
+<private-channel :recieved-id="{{ $recievedId }}" />
 @endsection

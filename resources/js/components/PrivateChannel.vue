@@ -8,7 +8,7 @@
                         <p v-for="item in messages" :key="item.id">{{ item.content }}</p>
                     </div>
                     <div class="card-footer">
-                        <form class="justify-content-between" action="/messages" method="post" @submit.prevent="send($event)">                            
+                        <form class="d-flex justify-content-between" action="/messages" method="post" @submit.prevent="send($event)">                            
                             <input type="text" class="form-control mr-1" v-model="message">
                             <button class="btn btn-primary">Send</button>
                         </form>
@@ -21,7 +21,7 @@
 
 <script>
     export default {
-        props: [],
+        props: ['recievedId'],
         data: function(){
             return {
                 message: '',
@@ -39,7 +39,7 @@
             }
         },
         created() {
-            Echo.private(`new-message-private.${recievedId}`)
+            Echo.private('new-message-private.' + this.recievedId)
             .listen('NewMessagePrivate', (e) => {
                 this.messages.push(e.message);
             });

@@ -1,0 +1,10 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Job extends Model
+{
+    protected $dates = ['reserved_at', 'available_at'];
+}

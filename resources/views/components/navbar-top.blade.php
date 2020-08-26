@@ -25,13 +25,13 @@
                     <a class="nav-link" href="/private-channel">Private Channel</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#">Email</a>
+                    <a class="nav-link" href="/email">Email</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#">Events</a>
+                    <a class="nav-link" href="/event">Events</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#">Queue</a>
+                    <a class="nav-link" href="/queue">Queue</a>
                 </li>
             </ul>
 

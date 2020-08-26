@@ -2009,7 +2009,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: [],
+  props: ['recievedId'],
   data: function data() {
     return {
       message: '',
@@ -2032,7 +2032,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this2 = this;
 
-    Echo["private"]("new-message-private.".concat(recievedId)).listen('NewMessagePrivate', function (e) {
+    Echo["private"]('new-message-private.' + this.recievedId).listen('NewMessagePrivate', function (e) {
       _this2.messages.push(e.message);
     });
   }
@@ -49554,7 +49554,7 @@ var render = function() {
             _c(
               "form",
               {
-                staticClass: "justify-content-between",
+                staticClass: "d-flex justify-content-between",
                 attrs: { action: "/messages", method: "post" },
                 on: {
                   submit: function($event) {

@@ -5,12 +5,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    <p><a href="{{ route('questions.index') }}">Users</a></p>
-                    <p><a href="{{ route('questions.index') }}">Questions</a></p>
-                    <p><a href="{{ route('room-chats.index') }}">RoomChats</a></p>
-
+                <div class="card-body">                    
                     {{ __('You are logged in!') }}
                 </div>
             </div>

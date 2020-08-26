@@ -2,7 +2,7 @@
     <label>{{ __('Image') }}</label>
     <input type="file" name="image">
     @if($form->image)
-        <img src="{{ asset('storage/'.$form->image) }}" class="img-thumbnail">
+        <img src="{{ asset('storage/'.$form->image) }}" class="img-thumbnail" max-width="100px">
     @endif
     @error('image')
         <span class="invalid-feedback" role="alert">
