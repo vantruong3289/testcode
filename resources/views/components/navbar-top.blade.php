@@ -33,6 +33,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="/queue">Queue</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="/via-database">Notify Database</a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->

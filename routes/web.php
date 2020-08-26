@@ -22,5 +22,11 @@ Route::get('present-channel', 'broadcastingController@presentChannel');
 Route::post('broadcasting/new-message-public', 'BroadcastingController@newMessagePublic');
 Route::post('broadcasting/new-message-private', 'BroadcastingController@newMessagePrivate');
 
+// Email
 Route::get('email', 'EmailController@index');
+
+// Queue
 Route::get('queue', 'QueueController@index');
+
+// Notify
+Route::get('via-database', 'NotificationController@viaDatabase');

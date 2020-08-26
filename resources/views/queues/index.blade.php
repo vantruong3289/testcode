@@ -3,7 +3,7 @@
 <div class="container-fuild">
     <div class="row row-flush">
         <div class="card">
-            <div class="card-header">{{ __('Question') }}</div>
+            <div class="card-header">{{ __('Queue') }}</div>
             <table class="table">
                 <thead>
                     <tr>

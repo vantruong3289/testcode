@@ -79,7 +79,7 @@ class FormController extends Controller
     {
         $input = $request->all();
         $input['image'] = $this->upload($request, $form);
-        $form->update($request->all());
+        $form->update($input);
         return redirect()->route('forms.show', $form->id);
     }
 
