@@ -24,17 +24,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/private-channel">Private Channel</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <a class="nav-link" href="/email">Email</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <a class="nav-link" href="/event">Events</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <a class="nav-link" href="/queue">Queue</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <a class="nav-link" href="/via-database">Notify Database</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/via-email">Notify Email</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/via-broadcast">Notify Broadcast</a>
                 </li>
             </ul>
 

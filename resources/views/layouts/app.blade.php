@@ -28,6 +28,10 @@
             @yield('content')
         </main>
     </div>
+    @stack('scripts')
+    <script>
+        var user = @json(Auth::user());
+    </script>
 </body>
 
 </html>

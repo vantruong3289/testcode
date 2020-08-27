@@ -62058,6 +62058,13 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   host: window.location.hostname + ':6001'
 });
 
+if (user) {
+  window.Echo["private"]('App.User.' + user.id).notification(function (notification) {
+    console.log(notification.type, notification);
+    alert(notification.type);
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/components/PresenceChannel.vue":

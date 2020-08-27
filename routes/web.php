@@ -30,3 +30,5 @@ Route::get('queue', 'QueueController@index');
 
 // Notify
 Route::get('via-database', 'NotificationController@viaDatabase');
+Route::get('via-email', 'NotificationController@viaEmail');
+Route::get('via-broadcast', 'NotificationController@viaBroadcast');

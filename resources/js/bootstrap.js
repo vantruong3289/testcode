@@ -46,3 +46,11 @@ window.Echo = new Echo({
     broadcaster: 'socket.io',
     host: window.location.hostname + ':6001'
 });
+
+if (user) {
+    window.Echo.private('App.User.' + user.id)
+        .notification((notification) => {
+            console.log(notification.type, notification);
+            alert(notification.type);
+        });
+}
